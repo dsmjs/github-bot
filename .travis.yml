@@ -1,0 +1,10 @@
+language: node_js
+dist: trusty
+notifications:
+  email: false
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
+after_install: npm ls >/dev/null
+before_script: npm run greenkeeper:update-lockfile
+after_script: npm run greenkeeper:upload-lockfile
