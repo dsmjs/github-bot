@@ -11,11 +11,15 @@
   "homepage": "https://github.com/dsmjs/github-bot#readme",
   "scripts": {
     "lint:md": "globstar --node -- markdownlint **/*.md",
-    "tests:unit": "mocha --recursive test/unit",
-    "test": "run-s lint:* coverage",
-    "coverage": "nyc run-s tests:unit",
+    "tests:integration": "cucumber.js test/integration --compiler js:babel-register --tags 'not @wip'",
+    "tests:integration:debug": "DEBUG=test run-s tests:integration",
+    "tests:integration:wip": "cucumber.js test/integration --compiler js:babel-register --tags @wip",
+    "test": "run-s lint:* tests:*",
     "commitmsg": "validate-commit-msg",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "build": "babel src --out-dir lib",
+    "start": "node lib/index.js",
+    "postinstall": "run-s build"
   },
   "config": {
     "commitizen": {
@@ -24,14 +28,28 @@
   },
   "devDependencies": {
     "@travi/any": "1.2.2",
+    "babel-cli": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-env": "1.6.0",
     "chai": "4.1.0",
+    "cucumber": "2.3.1",
     "cz-conventional-changelog": "2.0.0",
     "globstar": "1.0.0",
+    "http-status-codes": "1.1.6",
     "husky": "0.14.3",
     "markdownlint-cli": "0.3.1",
     "mocha": "3.4.2",
     "npm-run-all": "4.0.2",
     "nyc": "11.0.3",
     "validate-commit-msg": "2.12.2"
+  },
+  "dependencies": {
+    "dotenv-safe": "4.0.4",
+    "glue": "4.1.0",
+    "good": "7.2.0",
+    "good-console": "6.4.0",
+    "good-squeeze": "5.0.2",
+    "hapi-github-webhooks": "1.0.3",
+    "hapi-greenkeeper-keeper": "1.2.0"
   }
 }
