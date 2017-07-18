@@ -19,7 +19,9 @@
     "precommit": "npm test",
     "build": "babel src --out-dir lib",
     "start": "node lib/index.js",
-    "postinstall": "run-s build"
+    "postinstall": "run-s build",
+    "greenkeeper:update-lockfile": "greenkeeper-lockfile-update",
+    "greenkeeper:upload-lockfile": "greenkeeper-lockfile-upload"
   },
   "config": {
     "commitizen": {
