@@ -4,7 +4,12 @@ notifications:
   email: false
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
 after_install: npm ls >/dev/null
 before_script: npm run greenkeeper:update-lockfile
 after_script: npm run greenkeeper:upload-lockfile
+deploy:
+  provider: heroku
+  app: dsmjs-github-bot
+  api_key:
+    secure: lfRdOVFOmwYssHeIfn3o8/wh/FaMmghjbKcbv/u/7fbOZf4O+xXkERbxsamdlLUxMK4XVi2Ihnp0PtDyNHDxqdbH1CivbKsQgXL4epZpyMMVmD7TObbD5bVerr1+wpegYaiF7SDjfFJfDiCD33WIzNNXRYJQb0k8qJjQTXVPoxmFYlyGozFx2lgmV+5J9p6Rf2MiwrrCl5dSTajuQVUBycqQPMFmeuR7embSZp2NtAOC2TLEYzn/YQr8dCcnxeoTcdNu5WamWy19p1LN9c2l5jJ8dgJmXh/NJ8WQ7OubIJZuYSE+DEwAJdCA/ceilv0VNRwA60hM/QYfSodbIeEEP5AKv58+KmWfd8vC9i69gIP4TgWhSpMnx++g3sSz0TRsa5f9JjMTiA3FZg5GuNZxXxLAcuYY9GBOgYk3Kj4hmtKAc8XgvT+bZSXFhT7PpHApjFLadZb0e9429Xes1UxrQrWLIHGOVPPT+Q714bHy4pDg9t47NJzMVxIG3SUgpHyrpDfNGTTibCCSTaMe6PJqF5GXaSS/WEXgi/Y+SzQ9UVsOr/0v36xQR6gT6JK081w+R0yABDC6dq53m4vppAnJVQrGZ13ryZf5F9PnyR/7kNzbz9U6Q50l5Us97HhYk67x4QNMIOczHE+SWvUjCxxff2CpyfEgYIKVvtqaQfNhvGs=
