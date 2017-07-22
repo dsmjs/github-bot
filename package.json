@@ -28,6 +28,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "engines": {
+    "node": "8.1.4"
+  },
   "devDependencies": {
     "@travi/any": "1.2.2",
     "babel-cli": "6.24.1",
