@@ -47,7 +47,7 @@
     "mocha": "3.4.2",
     "npm-run-all": "4.0.2",
     "nyc": "11.0.3",
-    "validate-commit-msg": "2.13.1"
+    "validate-commit-msg": "2.14.0"
   },
   "dependencies": {
     "dotenv-safe": "4.0.4",
