@@ -32,7 +32,7 @@
     "node": "8.1.4"
   },
   "devDependencies": {
-    "@travi/any": "1.4.0",
+    "@travi/any": "1.4.1",
     "babel-cli": "6.26.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.0",
