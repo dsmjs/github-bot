@@ -29,7 +29,7 @@
     }
   },
   "engines": {
-    "node": "8.1.4"
+    "node": "8.9.4"
   },
   "devDependencies": {
     "@travi/any": "1.7.2",
